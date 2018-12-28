@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/threads', 'ThreadController@index');
+Route::get('/threads/{thread}', 'ThreadController@show');
+
+Auth::routes([
+    'register' => false,
+]);
